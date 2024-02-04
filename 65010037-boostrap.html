@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>Music Genres</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--scroll-padding, 100px);
+        }
+
+        body {
+            padding-top: 56px;
+            /* Adjusted for the fixed navbar */
+            
+        }
+
+        .box {
+            position: relative;
+            height: 300px;
+            width: 70%;
+            transform: translateX(25%);
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 15px;
+            margin: 0 0 50px 0;
+            padding: 20px;
+            
+        }
+
+        #box1 {
+            background-color: rgb(85, 127, 168);
+        }
+
+        #box2 {
+            background-color: rgb(222, 167, 177);
+        }
+
+        #box3 {
+            background-color: rgb(225, 208, 123);
+        }
+
+        #box4 {
+            background-color: rgb(219, 137, 137);
+        }
+
+        #box5 {
+            background-color: rgb(119, 100, 125);
+        }
+
+        #box6 {
+            background-color: rgb(132, 168, 140);
+        }
+
+        #box7 {
+            background-color: rgb(103, 153, 164);
+        }
+
+        img {
+            position: absolute;
+            width: auto;
+            height: 350px;
+            bottom: 0;
+            right: 0;
+            border-radius: 0 0 15px 0;
+            z-index: 0;
+        }
+
+        .descript {
+            width: 80%; 
+            white-space: initial;
+            overflow: initial;
+            text-overflow: initial;
+        }
+
+        .read-more {
+            color: white;
+            text-align: right;
+        }
+
+        .rec-img {
+            height: 300px;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 992px) and (max-width: 1400px) {
+            .descript{
+                width: 60%;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 991px) {
+            .box {
+                position: relative;
+                height: 300px;
+                width: 100%;
+                color: #fff;
+                transform: translateX(0);
+            }
+
+            .descript {
+                width: 40%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; 
+            }
+            
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                position: relative;
+                height: 300px;
+                width: 100%;
+                color: #fff;
+                transform: translateX(0);
+            }
+
+            .descript {
+                width: 40%;
+                display: none;
+            }
+
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- logo -->
+            <a class="navbar-brand fs-4" href="#">Music Genres</a>
+            <!-- toggle btn -->
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Side bar -->
+            <div class="sidebar offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Music Genres</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <!-- Side bar body -->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#box1">Jazz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#box2">Rock</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#box3">RnB</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#box4">Pop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#box5">Soul</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#box6">EDM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#box7">Hip-Hop</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content with 7 green rounded edge boxes -->
+    <div class="container mt-5">
+        <div id="box1" class="box box1">
+            <div class="content">
+                <p class="fs-1 ">Jazz</p>
+                <p class="descript fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In obcaecati, consequatur sit fuga recusandae ex autem</p>
+                <a class="read-more" href="#">read more</a>
+            </div>
+            <img src="Jazz.png" alt="">
+        </div>
+        <div id="box2" class="box box2">
+            <div class="content">
+                <p class="fs-1 ">Rock</p>
+                <p class="descript fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In obcaecati, consequatur sit fuga recusandae ex autem</p>
+                <a class="read-more" href="#">read more</a>
+            </div>
+            <img src="Rock.png" alt="">
+        </div>
+        <div id="box3" class="box">
+            <div class="content">
+                <p class="fs-1 ">RnB</p>
+                <p class="descript fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In obcaecati, consequatur sit fuga recusandae ex autem</p>
+                <a class="read-more" href="#">read more</a>
+            </div>
+            <img src="RnB.png" alt="">
+        </div>
+        <div id="box4" class="box">
+            <div class="content">
+                <p class="fs-1 ">Pop</p>
+                <p class="descript fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In obcaecati, consequatur sit fuga recusandae ex autem</p>
+                <a class="read-more" href="#">read more</a>
+            </div>
+            <img src="Pop.png" alt="">
+        </div>
+        <div id="box5" class="box">
+            <div class="content">
+                <p class="fs-1 ">Soul</p>
+                <p class="descript fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In obcaecati, consequatur sit fuga recusandae ex autem</p>
+                <a class="read-more" href="#">read more</a>
+            </div>
+            <img class="rec-img" src="Soul.jpg" alt="">
+        </div>
+        <div id="box6" class="box">
+            <div class="content">
+                <p class="fs-1 ">EDM</p>
+                <p class="descript fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In obcaecati, consequatur sit fuga recusandae ex autem</p>
+                <a class="read-more" href="#">read more</a>
+            </div>
+            <img class="rec-img" src="EDM.png" alt="">
+        </div>
+        <div id="box7" class="box">
+            <div class="content">
+                <p class="fs-1 ">Hip-Hop</p>
+                <p class="descript fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In obcaecati, consequatur sit fuga recusandae ex autem</p>
+                <a class="read-more" href="#">read more</a>
+            </div>
+            <img class="rec-img" src="Hip-Hop.jpg" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>
